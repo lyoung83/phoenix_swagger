@@ -61,7 +61,7 @@ defmodule Mix.Tasks.Phx.Swagger.Generate do
 
   defp has_no_endpoint do
     !Keyword.has_key?(Mix.Project.get().application(), :mod)
-      || is_nil(Application.get_env(app_name(), Module.concat([top_level_namespace(), :Web, :Endpoint])))
+      || is_nil(Application.get_env(app_name(), Module.concat([top_level_namespace(), :Endpoint])))
   end
 
 
