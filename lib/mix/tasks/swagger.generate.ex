@@ -23,10 +23,10 @@ defmodule Mix.Tasks.Phx.Swagger.Generate do
   defp app_path do
     Enum.at(Mix.Project.load_paths(), 0) |> String.split("_build") |> Enum.at(0)
   end
-  defp top_level_namespace, do: Mix.Project.get().application()[:mod] |> elem(0) |> Module.split |> Enum.drop(-1) |> Module.concat
+  defp top_level_namespace, do: Mix.Project.get().application()[:mod] |> elem(0) |> Module.split |> Module.concat
   defp app_name, do: Mix.Project.get().project()[:app]
   defp default_swagger_file_path, do: app_path() <> "swagger.json"
-  defp default_router_module, do: Module.concat([top_level_namespace(), :Web, :Router])
+  defp default_router_module, do: Module.concat([top_level_namespace(), :Router])
 
   def run(args) do
     Mix.Task.run("compile")
