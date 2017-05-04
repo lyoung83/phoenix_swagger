@@ -174,7 +174,7 @@ defmodule Mix.Tasks.Phx.Swagger.Generate do
   end
 
   defp collect_host(swagger_map) do
-    endpoint_config = Application.get_env(app_name(), Module.concat([top_level_namespace(), :Web, :Endpoint]))
+    endpoint_config = Application.get_env(app_name(), Module.concat([top_level_namespace(), :Endpoint]))
 
     case Keyword.get(endpoint_config, :url) do
       nil -> swagger_map
