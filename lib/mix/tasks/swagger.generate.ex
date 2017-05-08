@@ -80,7 +80,6 @@ defmodule Mix.Tasks.Phx.Swagger.Generate do
       |> List.wrap()
       |> Module.concat()
       |> Code.ensure_loaded()
-
     router
   end
 
